@@ -8,5 +8,7 @@ describe 'String Calculator: ' do
 
   it 'returns the single number as is' do 
     expect(add('3')).to eq(3)
+    expect(add('4')).to eq(4)
+    expect(add('   5      ')).to eq(5)
   end
 end
