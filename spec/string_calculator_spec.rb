@@ -22,5 +22,6 @@ describe 'String Calculator: ' do
 
   it 'allows to handle new line between numbers' do 
     expect(add("1\n2,3")).to eq(6)
+    expect(add("1,2\n3,4\n,5,6,7,8")).to eq(30)
   end
 end
