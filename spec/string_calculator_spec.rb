@@ -5,4 +5,8 @@ describe 'String Calculator: ' do
     expect(add('')).to eq(0)
     expect(add('   ')).to eq(0)
   end
+
+  it 'returns the single number as is' do 
+    expect(add('3')).to eq(3)
+  end
 end
