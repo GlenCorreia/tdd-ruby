@@ -25,4 +25,8 @@ describe 'String Calculator: ' do
     expect(add("1\n2,3")).to eq(6)
     expect(add("1,2\n3,4\n5,6\n7,8")).to eq(36)
   end
+
+  it 'supports different delimiters' do 
+    expect(add("//;\n1;2;3;4")).to eq(10)
+  end
 end
