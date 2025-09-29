@@ -38,4 +38,8 @@ describe 'String Calculator: ' do
     expect{add('-1,2,-33,5')}.to raise_error(RuntimeError, "negatives not allowed: [-1, -33]")
     expect{add('-1,99,-999,-9999')}.to raise_error(RuntimeError, "negatives not allowed: [-1, -999, -9999]")
   end
+
+  it 'ignores numbers greater than 1000' do 
+    expect(add('2,1001')).to eq(2)
+  end
 end
