@@ -1,3 +1,7 @@
 def add(number_str)
-  0 if number_str.strip == ''
+  if number_str.strip == ''
+    0
+  else
+    number_str.to_i
+  end
 end
