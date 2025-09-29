@@ -19,4 +19,8 @@ describe 'String Calculator: ' do
     hundred_nos = (1..100).to_a.join(',')
     expect(add(hundred_nos)).to eq(5050)
   end
+
+  it 'allows to handle new line between numbers' do 
+    expect(add("1\n2,3")).to eq(6)
+  end
 end
