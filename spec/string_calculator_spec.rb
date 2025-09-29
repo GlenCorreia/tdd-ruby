@@ -31,4 +31,8 @@ describe 'String Calculator: ' do
     expect(add("//-\n9-9-9")).to eq(27)
     expect(add("//>\n100>200")).to eq(300)
   end
+
+  it 'raises exception when negative number is passed' do 
+    expect(add('-1,3,4')).to raise_error('negatives not allowed')
+  end
 end
