@@ -15,5 +15,8 @@ describe 'String Calculator: ' do
   it 'adds comma seperated numbers' do 
     expect(add('1,2,3,4')).to eq(10)
     expect(add('4,4,4 ')).to eq(12)
+    # Check if sum of numbers from 1 to 100 is equal to 5050
+    hundred_nos = (1..100).to_a.join(',')
+    expect(add(hundred_nos)).to eq(5050)
   end
 end
