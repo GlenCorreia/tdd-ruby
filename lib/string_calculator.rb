@@ -16,8 +16,9 @@ end
 def process_numbers string_of_numbers, delimiter=','
   numbers_array_of_strings = string_of_numbers.split(delimiter)
   numbers_array_of_integers = numbers_array_of_strings.map(&:to_i)
+  numbers_array_of_integers_under_1000 = numbers_array_of_integers.select { |number| number < 1001 }
   negative_numbers = []
-  numbers_array_of_integers.each do |num|
+  numbers_array_of_integers_under_1000.each do |num|
     if num.negative?
       negative_numbers << num
     end
@@ -32,5 +33,5 @@ def process_numbers string_of_numbers, delimiter=','
 
     raise error_message
   end
-  total = numbers_array_of_integers.sum
+  total = numbers_array_of_integers_under_1000.sum
 end
