@@ -14,5 +14,6 @@ describe 'String Calculator: ' do
 
   it 'adds comma seperated numbers' do 
     expect(add('1,2,3,4')).to eq(10)
+    expect(add('4,4,4 ')).to eq(12)
   end
 end
