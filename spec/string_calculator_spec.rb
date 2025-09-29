@@ -33,6 +33,6 @@ describe 'String Calculator: ' do
   end
 
   it 'raises exception when negative number is passed' do 
-    expect(add('-1,3,4')).to raise_error('negatives not allowed')
+    expect{add('-1,3,4')}.to raise_error(RuntimeError, "negatives not allowed: -1")
   end
 end
