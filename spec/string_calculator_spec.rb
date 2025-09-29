@@ -41,5 +41,6 @@ describe 'String Calculator: ' do
 
   it 'ignores numbers greater than 1000' do 
     expect(add('2,1001')).to eq(2)
+    expect(add('9090,7,10,1434,13,10,111001')).to eq(40)
   end
 end
