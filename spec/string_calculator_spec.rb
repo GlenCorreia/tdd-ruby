@@ -7,12 +7,13 @@ describe 'String Calculator: ' do
   end
 
   it 'returns the single number as is' do 
-    expect(add('3')).to eq(3)
+    expect(add('1')).to eq(1)
     expect(add('4')).to eq(4)
     expect(add('   5      ')).to eq(5)
   end
 
   it 'adds comma seperated numbers' do 
+    expect(add('1,5')).to eq(6)
     expect(add('1,2,3,4')).to eq(10)
     expect(add('4,4,4 ')).to eq(12)
     # Check if sum of numbers from 1 to 100 is equal to 5050
