@@ -17,13 +17,16 @@ end
 def process_numbers(string_of_numbers, delimiter = ',')
   numbers_array_of_strings = string_of_numbers.split(delimiter)
   numbers_array_of_integers = numbers_array_of_strings.map(&:to_i)
+
   numbers_array = numbers_array_of_integers.select do |number|    # Return array of number under 1001
     number < 1001
   end 
+
   negative_numbers = []
   numbers_array.each do |num|                                     # Check for negative numbers
     negative_numbers << num if num.negative?
   end
+
   if negative_numbers.length.positive?
     error_message = 'negatives not allowed: '
     if negative_numbers.length == 1
@@ -33,6 +36,7 @@ def process_numbers(string_of_numbers, delimiter = ',')
     end
     raise error_message
   end
+
   numbers_array.sum                                               # Return the sum of all the numbers of the array
 end
 
