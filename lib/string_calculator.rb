@@ -25,11 +25,11 @@ def process_numbers(string_of_numbers, delimiter = ',')
     negative_numbers << num if num.negative?
   end
   if negative_numbers.length.positive?
-    error_message = 'negatives not allowed:'
+    error_message = 'negatives not allowed: '
     if negative_numbers.length == 1
-      error_message += " #{negative_numbers.first}"
+      error_message += negative_numbers.first.to_s
     elsif negative_numbers.length > 1
-      error_message += " #{negative_numbers}"
+      error_message += negative_numbers.to_s
     end
     raise error_message
   end
