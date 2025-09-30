@@ -4,10 +4,8 @@ def add(number_str)
   if number_str.strip == ''
     0
   elsif number_str[0, 2] == '//'
-    numbers_with_delimiter = number_str.split("\n")
-    delimiter = numbers_with_delimiter[0][-1]
-    string_of_numbers = numbers_with_delimiter[1]
-    process_numbers(string_of_numbers, delimiter)
+    extracted_delimiter = extract_delimiter(number_str)
+    process_numbers(extracted_delimiter[0], extracted_delimiter[1])
   elsif number_str.include?(',')
     process_numbers(number_str, /,|\n/)
   else
@@ -34,4 +32,11 @@ def process_numbers(string_of_numbers, delimiter = ',')
     raise error_message
   end
   numbers_array.sum
+end
+
+def extract_delimiter(number_str)
+  numbers_with_delimiter = number_str.split("\n")
+  delimiter = numbers_with_delimiter[0][-1]
+  string_of_numbers = numbers_with_delimiter[1]
+  return [string_of_numbers, delimiter]
 end
