@@ -37,6 +37,8 @@ def process_numbers(string_of_numbers, delimiter = ',')
     raise error_message
   end
 
+ 
+  return numbers_array.inject(1) { |result, element| result * element }  if delimiter == "*"
   numbers_array.sum                                               # Return the sum of all the numbers of the array
 end
 

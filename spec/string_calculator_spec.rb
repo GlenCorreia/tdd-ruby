@@ -32,6 +32,8 @@ describe 'String Calculator: ' do
     expect(add("//;\n1;2;3;4")).to eq(10)
     expect(add("//-\n9-9-9")).to eq(27)
     expect(add("//>\n100>200")).to eq(300)
+    # When '*' - do product
+    expect(add("//*\n30*50")).to eq(1500)
   end
 
   it 'raises exception when negative number is passed' do
